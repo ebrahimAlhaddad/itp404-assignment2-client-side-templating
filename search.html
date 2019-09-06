@@ -110,7 +110,17 @@
   <template id="subreddit-template">
     {{#each subreddits}}
       <div class="subreddit">
-
+        <a href={{data.url}} target="_blank">{{data.title}}</a>
+        <h5>Score: {{data.score}}</h5>
+        <h5>Subscribers: {{number-format data.subreddit_subscribers}}</h5>
+        <h5>
+          {{#if data.num_comments}}
+            Comments: {{number-format data.num_comments}}
+          {{else}}
+            No comments
+          {{/if}}
+        </h5>
+        <hr>
       </div>
     {{/each}}
   </template>
